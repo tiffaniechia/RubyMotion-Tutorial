@@ -4,21 +4,14 @@ class AppDelegate
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
     @window.makeKeyAndVisible
 
-    @blue_view = UIView.alloc.initWithFrame(CGRectMake(10,10,100,100))
-    @blue_view.backgroundColor = UIColor.blueColor
+    # window will take the given uiviewcontroller and adjust its view's size to fit the window
+    # better way of setting up your window as opposed to window.addsubview errwhere
 
-    @window.addSubview(@blue_view)
-
-    @green_view = UIView.alloc.initWithFrame(CGRectMake(30,30,40,40))
-    @green_view.backgroundColor = UIColor.greenColor
-
-    @window.addSubview(@green_view)
-
-    @red_view = UIView.alloc.initWithFrame(CGRectMake(30,30,50,50))
-    @red_view.backgroundColor = UIColor.redColor
-
-    @blue_view.addSubview(@red_view)
-
+    # initwithnibname. to load controller from NIB file (created using xcode interface builder to visually construct view)
+    # but no xcode so we can safely pass nil
+    # it is also the 'designated initializer ' of uiciewcontrollers.
+    # hence whenever you want to create a controller you must call this method at some point
+    @window.rootViewController = TapController.alloc.initWithNibName(nil, bundle: nil)
 
     true
   end
