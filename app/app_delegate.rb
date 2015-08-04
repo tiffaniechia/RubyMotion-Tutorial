@@ -7,10 +7,12 @@ class AppDelegate
     controller = TapController.alloc.initWithNibName(nil, bundle: nil)
     nav_controller = UINavigationController.alloc.initWithRootViewController(controller)
     alphabet_controller = AlphabetController.alloc.initWithNibName(nil, bundle: nil)
+    animation_controller = AnimationController.alloc.initWithNibName(nil, bundle: nil)
 
     tab_controller = UITabBarController.alloc.initWithNibName(nil, bundle: nil)
-    tab_controller.viewControllers = [alphabet_controller, nav_controller]
+    tab_controller.viewControllers = [animation_controller, alphabet_controller, nav_controller]
 
+    #why does the tabview always unable to load one of the tabs upfront????
     @window.rootViewController = tab_controller
 
     true
