@@ -13,8 +13,11 @@ class AppDelegate
     animation_controller = AnimationController.alloc.initWithNibName(nil, bundle: nil)
     animation_controller.tabBarItem = UITabBarItem.alloc.initWithTitle('Animation', image: nil, tag: 3)
 
+    user_controller = UserController.alloc.initWithNibName(nil, bundle: nil)
+    user_controller.tabBarItem = UITabBarItem.alloc.initWithTitle('User', image: nil, tag: 4)
+
     tab_controller = UITabBarController.alloc.initWithNibName(nil, bundle: nil)
-    tab_controller.viewControllers = [animation_controller, alphabet_controller, nav_controller]
+    tab_controller.viewControllers = [user_controller, animation_controller, alphabet_controller, nav_controller]
 
     @window.rootViewController = tab_controller
 
